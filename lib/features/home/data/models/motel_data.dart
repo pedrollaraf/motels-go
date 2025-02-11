@@ -1,6 +1,6 @@
 import 'package:moteis_go/common/commons.dart';
 import 'package:moteis_go/core/data/network/models/decimal.dart';
-import 'package:moteis_go/features/home/domain/entities/motel_data_entity.dart';
+import 'package:moteis_go/features/home/data/models.dart';
 
 class MotelData {
   final int page;
@@ -9,7 +9,7 @@ class MotelData {
   final int totalMoteis;
   final double radius;
   final int maxPages;
-  //final List<Motel> moteis;
+  final List<Motel> moteis;
 
   MotelData({
     required this.page,
@@ -18,7 +18,7 @@ class MotelData {
     required this.totalMoteis,
     required this.radius,
     required this.maxPages,
-    //required this.moteis,
+    required this.moteis,
   });
 
   factory MotelData.fromJson(Map<String, dynamic> json) {
@@ -29,7 +29,7 @@ class MotelData {
       totalMoteis: json['totalMoteis'] ?? 0,
       radius: (json['raio'] ?? 0.0).toDouble(),
       maxPages: json['maxPaginas'] ?? 1,
-      //moteis: (json['moteis'] as List<dynamic>?)?.map((e) => Motel.fromJson(e)).toList() ?? [],
+      moteis: (json['moteis'] as List<dynamic>?)?.map((e) => Motel.fromJson(e)).toList() ?? [],
     );
   }
 
@@ -44,6 +44,7 @@ class MotelData {
         doubleValue: radius,
       ),
       maxPages: maxPages,
+      moteis: moteis.map((motel) => motel.toEntity()).toList(),
     );
   }
 }

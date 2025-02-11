@@ -22,7 +22,7 @@ class GetMotelsRepositoryImpl implements GetMotelsRepository {
   Future<Either<Failure, MotelDataEntity>> getMotels() async {
     return onRequest(
       () async {
-        final response = await _service.get(url, withInterceptor: false);
+        final response = await _service.get("$baseUrl/e728bb91e0cd56cc0711");
         var jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
         _logger.d(response.body);
         final obj = MotelResponse.fromJson(jsonResponse);

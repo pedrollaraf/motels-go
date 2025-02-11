@@ -1,4 +1,4 @@
-import 'package:moteis_go/features/home/data/models/motel_data.dart';
+import 'package:moteis_go/features/home/data/models.dart';
 
 class MotelResponse {
   final bool success;

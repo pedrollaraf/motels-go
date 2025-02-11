@@ -5,6 +5,6 @@ import 'package:moteis_go/di/app_di.dart';
 Future<void> registerCoreDependencies() async {
   getIt.registerSingleton<Logger>(Logger());
   getIt.registerLazySingleton<ApiService>(
-    () => ApiService(),
+    () => ApiService(getIt<Logger>()),
   );
 }

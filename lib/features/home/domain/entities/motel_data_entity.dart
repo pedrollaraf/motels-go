@@ -1,4 +1,5 @@
 import 'package:moteis_go/core/data/network/models/decimal.dart';
+import 'package:moteis_go/features/home/domain/entities.dart';
 
 class MotelDataEntity {
   final int page;
@@ -7,7 +8,7 @@ class MotelDataEntity {
   final int totalMoteis;
   final Decimal radius;
   final int maxPages;
-  //final List<MotelEntity> moteis;
+  final List<MotelEntity> moteis;
 
   MotelDataEntity({
     required this.page,
@@ -16,6 +17,6 @@ class MotelDataEntity {
     required this.totalMoteis,
     required this.radius,
     required this.maxPages,
-    //required this.moteis,
+    required this.moteis,
   });
 }
