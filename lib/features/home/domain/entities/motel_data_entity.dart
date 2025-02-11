@@ -8,7 +8,7 @@ class MotelDataEntity {
   final int totalMoteis;
   final Decimal radius;
   final int maxPages;
-  final List<MotelEntity> moteis;
+  final List<MotelEntity> motels;
 
   MotelDataEntity({
     required this.page,
@@ -17,6 +17,6 @@ class MotelDataEntity {
     required this.totalMoteis,
     required this.radius,
     required this.maxPages,
-    required this.moteis,
+    required this.motels,
   });
 }

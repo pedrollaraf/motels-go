@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:logger/web.dart';
 import 'package:moteis_go/core/data/network/models/request_states.dart';
 import 'package:moteis_go/features/home/domain/entities/motel_data_entity.dart';
 import 'package:moteis_go/features/home/domain/usecases/get_motels_usecases.dart';
@@ -26,7 +25,11 @@ class HomeCubit extends Cubit<HomeState> {
     final result = await _usecases.invoke();
     result.fold(
       (exception) {
-        Logger().d(exception.message);
+        emit(
+          state.copyWith(
+            motelsRequestState: const MotelsFailureState(),
+          ),
+        );
       },
       (motelDataEntity) {
         emit(

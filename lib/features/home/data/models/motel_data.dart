@@ -9,7 +9,7 @@ class MotelData {
   final int totalMoteis;
   final double radius;
   final int maxPages;
-  final List<Motel> moteis;
+  final List<Motel> motels;
 
   MotelData({
     required this.page,
@@ -18,7 +18,7 @@ class MotelData {
     required this.totalMoteis,
     required this.radius,
     required this.maxPages,
-    required this.moteis,
+    required this.motels,
   });
 
   factory MotelData.fromJson(Map<String, dynamic> json) {
@@ -29,7 +29,7 @@ class MotelData {
       totalMoteis: json['totalMoteis'] ?? 0,
       radius: (json['raio'] ?? 0.0).toDouble(),
       maxPages: json['maxPaginas'] ?? 1,
-      moteis: (json['moteis'] as List<dynamic>?)?.map((e) => Motel.fromJson(e)).toList() ?? [],
+      motels: (json['moteis'] as List<dynamic>?)?.map((e) => Motel.fromJson(e)).toList() ?? [],
     );
   }
 
@@ -44,7 +44,7 @@ class MotelData {
         doubleValue: radius,
       ),
       maxPages: maxPages,
-      moteis: moteis.map((motel) => motel.toEntity()).toList(),
+      motels: motels.map((motel) => motel.toEntity()).toList(),
     );
   }
 }

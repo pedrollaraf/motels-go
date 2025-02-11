@@ -1,10 +1,10 @@
 import 'package:moteis_go/core/data/network/models/decimal.dart';
-import 'package:moteis_go/features/home/data/models.dart';
+import 'package:moteis_go/features/home/domain/entities.dart';
 
 class PeriodEntity {
   final String duration;
   final Decimal price;
-  final Discount? discount;
+  final DiscountEntity? discount;
   final Decimal totalPrice;
   final bool hasCourtesy;
   final String formattedDuration;

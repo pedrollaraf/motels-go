@@ -38,7 +38,7 @@ class Period {
         formattedValue: price.formatToDouble(),
         doubleValue: price,
       ),
-      discount: discount,
+      discount: discount?.toEntity(),
       totalPrice: Decimal(
         formattedValue: totalPrice.formatToDouble(),
         doubleValue: totalPrice,
