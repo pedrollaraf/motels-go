@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moteis_go/common/theme/app_color_theme.dart';
 
 class MotelSuiteCard extends StatelessWidget {
   final String suiteImageUrl;
@@ -13,8 +12,8 @@ class MotelSuiteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2,
-      color: AppColorTheme.backgroundColor,
+      elevation: 0.1,
+      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

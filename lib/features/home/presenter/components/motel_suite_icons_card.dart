@@ -9,9 +9,11 @@ class MotelSuiteIconsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 0.1,
+      color: Colors.white,
       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.symmetric(vertical: 16),
         child: SizedBox(
           height: 40,
           child: Padding(
@@ -37,6 +39,7 @@ class MotelSuiteIconsCard extends StatelessWidget {
       height: 35,
       width: 35,
       decoration: BoxDecoration(
+        color: Colors.grey[200],
         borderRadius: BorderRadius.circular(4),
       ),
       child: ClipRRect(
