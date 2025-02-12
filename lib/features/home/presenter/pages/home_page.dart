@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColorTheme.primaryColor,
         body: BlocProvider(
           create: (context) => getIt<HomeCubit>()..getMotels(),
           child: BlocBuilder<HomeCubit, HomeState>(
@@ -40,13 +41,11 @@ class HomePage extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                 child: Row(
                                   children: [
-                                    // Leading Icon
                                     IconButton(
                                       onPressed: () {},
                                       icon: Icon(Icons.list, color: Colors.white),
                                     ),
 
-                                    // TabBar centralizada
                                     Expanded(
                                       child: TabBar(
                                         dividerHeight: 0,
@@ -133,13 +132,17 @@ class HomePage extends StatelessWidget {
             final motelData = state.motelDataEntity?.motels ?? [];
             final suiteData = motelData.first.suites;
             return ListView.builder(
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
               itemCount: suiteData.length,
               itemBuilder: (context, index) {
                 final suite = suiteData[index];
                 return Column(
                   children: [
+                    SizedBox(
+                      height: 16,
+                    ),
                     MotelHeaderItem(
+                      motelImage: motelData.first.logo,
                       motelName: motelData.first.fantasyName,
                       motelNeighboor: motelData.first.neighborhood,
                       motelDistance: motelData.first.distance.formattedValue,
@@ -150,12 +153,12 @@ class HomePage extends StatelessWidget {
                       suiteImageUrl: suite.photos.first,
                       suiteName: suite.name,
                     ),
-                    const SizedBox(height: 2),
                     MotelSuiteIconsCard(
                       categories: suite.categoryItems,
                     ),
-                    const SizedBox(height: 2),
-                    MotelSuiteInfoPriceCard(),
+                    MotelSuiteInfoPriceCard(
+                      periods: suite.periods,
+                    ),
                   ],
                 );
               },
@@ -176,6 +179,7 @@ class HomePage extends StatelessWidget {
           highlightColor: Colors.grey.shade100,
           enabled: true,
           child: MotelHeaderItem(
+            motelImage: '',
             motelName: '',
             motelNeighboor: '',
             motelDistance: '',
@@ -207,7 +211,9 @@ class HomePage extends StatelessWidget {
           baseColor: Colors.grey.shade300,
           highlightColor: Colors.grey.shade100,
           enabled: true,
-          child: MotelSuiteInfoPriceCard(),
+          child: MotelSuiteInfoPriceCard(
+            periods: [],
+          ),
         ),
       ],
     );
