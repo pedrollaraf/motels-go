@@ -30,7 +30,10 @@ void main() {
           formattedValue: "0.0",
           doubleValue: 0.0,
         ),
-        maxPages: 1,
+        maxPages: Decimal(
+          formattedValue: "1.0",
+          doubleValue: 1.0,
+        ),
         motels: [],
       );
       when(() => mockRepository.getMotels()).thenAnswer((_) async => Right(motelData));

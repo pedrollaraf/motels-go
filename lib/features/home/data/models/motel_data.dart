@@ -8,7 +8,7 @@ class MotelData {
   final int totalSuites;
   final int totalMoteis;
   final double radius;
-  final int maxPages;
+  final double maxPages;
   final List<Motel> motels;
 
   MotelData({
@@ -28,7 +28,7 @@ class MotelData {
       totalSuites: json['totalSuites'] ?? 0,
       totalMoteis: json['totalMoteis'] ?? 0,
       radius: (json['raio'] ?? 0.0).toDouble(),
-      maxPages: json['maxPaginas'] ?? 1,
+      maxPages: (json['maxPaginas'] ?? 0.0).toDouble(),
       motels: (json['moteis'] as List<dynamic>?)?.map((e) => Motel.fromJson(e)).toList() ?? [],
     );
   }
@@ -43,7 +43,7 @@ class MotelData {
         formattedValue: radius.formatToDouble(),
         doubleValue: radius,
       ),
-      maxPages: maxPages,
+      maxPages: Decimal(formattedValue: maxPages.formatToDouble(), doubleValue: maxPages),
       motels: motels.map((motel) => motel.toEntity()).toList(),
     );
   }
