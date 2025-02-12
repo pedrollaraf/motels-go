@@ -7,7 +7,7 @@ class MotelDataEntity {
   final int totalSuites;
   final int totalMoteis;
   final Decimal radius;
-  final int maxPages;
+  final Decimal maxPages;
   final List<MotelEntity> motels;
 
   MotelDataEntity({

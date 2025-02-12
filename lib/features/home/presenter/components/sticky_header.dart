@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moteis_go/common/commons.dart';
+import 'package:moteis_go/features/home/presenter/components/motel_discount_carousel_item.dart';
+import 'package:moteis_go/features/home/presenter/cubits/home_cubit.dart';
+import 'package:shimmer/shimmer.dart';
 
 class StickyHeader extends SliverPersistentHeaderDelegate {
   @override
@@ -8,9 +12,22 @@ class StickyHeader extends SliverPersistentHeaderDelegate {
       color: AppColorTheme.surfaceColor,
       padding: EdgeInsets.all(16),
       alignment: Alignment.center,
-      child: Text(
-        "Sticky Header",
-        style: TextStyle(color: Colors.white, fontSize: 18),
+      child: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          if (state.motelsRequestState is MotelsLoadingState) {
+            return Shimmer.fromColors(
+              baseColor: Colors.grey.shade300,
+              highlightColor: Colors.grey.shade100,
+              enabled: true,
+              child: MotelDiscountCarouselItem(),
+            );
+          } else {
+            return Text(
+              "Sticky Header",
+              style: TextStyle(color: Colors.black, fontSize: 18),
+            );
+          }
+        },
       ),
     );
   }
