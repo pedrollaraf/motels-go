@@ -1,4 +1,4 @@
-# Teste para Desenvolvedor Mobile (Flutter) - Segmento de Motéis
+# Mobile (Flutter) - Segmento de Motéis
 Objetivo: Avaliar habilidades em Flutter, Dart, gerenciamento de estado, consumo de API e testes unitários.
 
 ## 📌 Descrição do Desafio
