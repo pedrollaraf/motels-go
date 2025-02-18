@@ -1,11 +1,15 @@
 # Mobile (Flutter) - Segmento de Motéis
 Objetivo: Avaliar habilidades em Flutter, Dart, gerenciamento de estado, consumo de API e testes unitários.
 
+## 📌 Resultado Previo:
+https://github.com/user-attachments/assets/f300c695-8995-4c7c-b873-f5c795a1f7fc
+
 ## 📌 Descrição do Desafio
 O desafio consiste em criar uma réplica da tela de listagem de motéis (apenas a aba "Ir Agora") do aplicativo Guia de Motéis GO, utilizando os seguintes links como API mock para obter os dados:
 
 https://jsonkeeper.com/b/1IXK<br/>
 https://www.npoint.io/docs/e728bb91e0cd56cc0711
+
 ## 📌 Requisitos:
 
 A listagem deve exibir os motéis disponíveis com nome, preço e imagem.<br/>
@@ -31,8 +35,5 @@ Implementar testes unitários cobrindo os principais componentes da aplicação.
 Código no GitHub (público ou privado).<br/>
 Rodar os testes unitários e garantir cobertura mínima de 70% na listagem.<br/>
 Prazo: até 11/02
-
-## 📌 Resultado Previo:
-https://github.com/user-attachments/assets/f300c695-8995-4c7c-b873-f5c795a1f7fc
 
 
